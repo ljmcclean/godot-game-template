@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bte7g11f6p7e7"]
+
+[ext_resource type="Script" path="res://scenes/menus/loading_screen/loading_screen.gd" id="1_h1n7b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hs6us"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwrml"]
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h1n7b")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -52.0
+offset_right = 275.0
+offset_bottom = -25.0
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxEmpty_hs6us")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lwrml")
+show_percentage = false
