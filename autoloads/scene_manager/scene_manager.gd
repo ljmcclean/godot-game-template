@@ -1,3 +1,4 @@
+class_name SceneManagerDocs
 extends Node
 ## Used for managing, loading, removing, and switching scenes.
 
@@ -49,7 +50,7 @@ func load_scene(scene_alias : String) -> void:
 	get_tree().change_scene_to_packed.call_deferred(scenes_packed["loading_screen"])
 	current_scene_alias = scene_alias
 
-## Additively loads the new scene.
+## Additively loads the new scene to the scene tree.
 func add_scene_to_tree(scene_alias : String) -> void:
 	var new_scene = scenes_packed[scene_alias].instantiate()
 	get_tree().root.add_child.call_deferred(new_scene)
