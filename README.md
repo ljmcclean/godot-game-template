@@ -9,5 +9,5 @@ Please reference the docs to see how to safely change or remove systems.
 It's far from perfect (I myself am still learning), so if you have any suggestions or advice feel free to let me know.
 
 Thank you to NightQuestGames (https://www.nightquestgames.com/) for the resources that made this project possible!
-*NightQuestGames* does not necessarily endorse or support this project, I just found there resources to be extremely helpful
+*NightQuestGames does not necessarily endorse or support this project, I just found there resources to be extremely helpful
 and of very high quality.*
