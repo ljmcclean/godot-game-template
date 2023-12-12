@@ -1,5 +1,4 @@
 # 2D Platformer Template
-_________________________
 
 Includes: player, state machine, save &amp; load system, scene manager, and file structure
 
