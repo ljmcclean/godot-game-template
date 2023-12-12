@@ -1,6 +1,7 @@
-***SaveLoadGame***
+****SaveLoadGame****
 ____________
 **Usage**:
+	
 	- Every object you wish to save must have a serialize() and deserialize()
 	method
 	
@@ -17,6 +18,7 @@ ____________
 	the same order.
 
 **Removal:**
+
 	- This system can be safely removed, simply delete the autoload and make 
 	sure all calls to its methods are removed
 	

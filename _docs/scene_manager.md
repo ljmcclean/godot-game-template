@@ -1,6 +1,7 @@
-***SceneManager***
+****SceneManager****
 ____________
 **Usage**:
+	
 	- You must update the scene manager every time you add a scene which you
 	would like it to have access to
 	
@@ -19,6 +20,7 @@ ____________
 	entire tree
 
 **Removal:**
+
 	- This system can be safely removed, simply delete the autoload and make 
 	sure all calls to its methods are removed
 	
