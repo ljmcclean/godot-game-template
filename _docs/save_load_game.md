@@ -8,7 +8,7 @@ method.
 	- Samples of these method implementations can be found in the GameData and
 	PlayerData autoloads.
 
-- The SaveLoadGame autload has the methods save_game() and load_game()
+- The SaveLoadGame autoload has the methods save_game() and load_game()
 all objects you wish to save and load must have their methods called in
 these methods (the order needs to be mirrored for save and load).
 
