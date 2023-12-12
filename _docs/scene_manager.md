@@ -21,6 +21,3 @@ ____________
 	as well
 	- These calls can be found in the "main_menu" scene and the "settings_menu"
 	scene
-
-Massive thanks to NightQuestGames at _link to website_ for providing the
-resources that made this possible.

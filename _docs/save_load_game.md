@@ -20,6 +20,3 @@ ____________
 	"settings_menu" scene
 	- Additionally, the serialize() and deserialize() methods found in the data
 	autoloads can be removed
-
-Massive thanks to NightQuestGames at _link to website_ for providing the
-resources that made this possible.
