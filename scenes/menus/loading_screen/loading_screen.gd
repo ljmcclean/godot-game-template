@@ -1,7 +1,6 @@
 extends Control
 
 var target_scene_path : StringName
-
 var loading_status : int
 var progress : Array[float]
 
@@ -22,4 +21,4 @@ func _process(_delta: float) -> void:
 		ResourceLoader.THREAD_LOAD_LOADED:
 			get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(target_scene_path))
 		ResourceLoader.THREAD_LOAD_FAILED:
-			print("Error. Could not load Resource")
+			print("Error. Could not load " + target_scene_path + "\n" + str(loading_status))
