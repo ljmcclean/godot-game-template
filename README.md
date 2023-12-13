@@ -1,5 +1,7 @@
 # 2D Platformer Template
 
+*Made with Godot 4.2*
+
 Includes: player, state machine, save &amp; load system, scene manager, and file structure
 
 This template is just to get a new project up and running, most of the systems will need to be changed to suit a new project.
