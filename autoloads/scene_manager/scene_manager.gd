@@ -1,18 +1,14 @@
 class_name SceneManagerDocs
 extends Node
 ## Used for managing, loading, removing, and switching scenes.
+##
+## Provides more convenient and customizable methods for changing scenes such
+## as abstracting the process for loading a scene additively and allowing 
+## scenes to be changed with a transition.
 
-## Scene aliases are keyed to PackedScene objects.
-var scenes_packed : Dictionary = {
-	"main_scene": preload("res://scenes/main/main.tscn"),
-	"main_menu": preload("res://scenes/menus/main_menu/main_menu.tscn"),
-	"settings_menu": preload("res://scenes/menus/settings_menu/settings_menu.tscn"),
-	"loading_screen": preload("res://scenes/menus/loading_screen/loading_screen.tscn"),
-	"world": preload("res://scenes/world/world.tscn")
-}
 
 ## Scene aliases are keyed to String scene paths.
-var scenes_path: Dictionary = {
+var scenes: Dictionary = {
 	"main_scene": "res://scenes/main/main.tscn",
 	"main_menu": "res://scenes/menus/main_menu/main_menu.tscn",
 	"settings_menu": "res://scenes/menus/settings_menu/settings_menu.tscn",
@@ -29,36 +25,35 @@ var load_scene_path : StringName
 func _ready() -> void:
 	current_scene_alias = "main_scene"
 
-## Adds a scene to scenes_packed and scenes_path.
+## Adds a scene's alias and path to the scenes Dictionary.
 func add_scene(scene_alias : String, scene_path : String) -> void:
-	scenes_packed[scene_alias] = load(scene_path)
-	scenes_path[scene_alias] = scene_path
+	scenes[scene_alias] = scene_path
 
-## Removes a scene from scenes_packed and scenes_path.
+## Removes a scene's alias and path from the scenes Dictionary.
 func remove_scene(scene_alias : String) -> void:
-	scenes_packed.erase(scene_alias)
-	scenes_path.erase(scene_alias)
+	scenes.erase(scene_alias)
 
-## Replaces the tree with the new scene.
+## Clears the tree and adds the new scene (updates current_scene_alias).
 func switch_scene(scene_alias : String) -> void:
-	get_tree().change_scene_to_packed(scenes_packed[scene_alias])
+	get_tree().change_scene_to_file(scenes[scene_alias])
 	current_scene_alias = scene_alias
 
-## Replaces tree with "loading_screen" and loads new scene.
+## Replaces tree with "loading_screen" and loads the new scene 
+## (updates current_scene_alias).
 func load_scene(scene_alias : String) -> void:
-	load_scene_path = scenes_path[scene_alias]
-	get_tree().change_scene_to_packed.call_deferred(scenes_packed["loading_screen"])
+	load_scene_path = scenes[scene_alias]
+	get_tree().change_scene_to_file.call_deferred(scenes["loading_screen"])
 	current_scene_alias = scene_alias
 
 ## Additively loads the new scene to the scene tree.
 func add_scene_to_tree(scene_alias : String) -> void:
-	var new_scene = scenes_packed[scene_alias].instantiate()
+	var new_scene = load(scenes[scene_alias]).instantiate()
 	get_tree().root.add_child.call_deferred(new_scene)
 
 ## Restarts the scene.
 func restart_scene() -> void:
 	get_tree().reload_current_scene()
 
-## Quits game.
+## Manages the quit game process.
 func quit_game() -> void:
 	get_tree().quit()

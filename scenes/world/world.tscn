@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/world/world.gd" id="1_hojkc"]
 [ext_resource type="Texture2D" uid="uid://bdghay42uan2x" path="res://common/art/meta/icon.svg" id="2_ubxik"]
-[ext_resource type="PackedScene" uid="uid://dpe8k0xl0asnp" path="res://scenes/characters/player/player.tscn" id="2_wl4ox"]
+[ext_resource type="PackedScene" uid="uid://dpe8k0xl0asnp" path="res://scenes/actors/player/player.tscn" id="2_wl4ox"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5t5xh"]
 texture = ExtResource("2_ubxik")

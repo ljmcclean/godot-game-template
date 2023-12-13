@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://dpe8k0xl0asnp"]
 
-[ext_resource type="Script" path="res://scenes/characters/player/player.gd" id="1_vs32y"]
+[ext_resource type="Script" path="res://scenes/actors/player/player.gd" id="1_vs32y"]
 [ext_resource type="Script" path="res://scenes/_common/state_machine/state_machine.gd" id="2_d12dt"]
-[ext_resource type="Script" path="res://scenes/characters/player/states/idle.gd" id="3_167jt"]
-[ext_resource type="Script" path="res://scenes/characters/player/states/fall.gd" id="4_kyj1j"]
-[ext_resource type="Script" path="res://scenes/characters/player/states/move.gd" id="5_s66g8"]
-[ext_resource type="Script" path="res://scenes/characters/player/states/jump.gd" id="6_m7r5e"]
+[ext_resource type="Script" path="res://scenes/actors/player/states/idle.gd" id="3_167jt"]
+[ext_resource type="Script" path="res://scenes/actors/player/states/fall.gd" id="4_kyj1j"]
+[ext_resource type="Script" path="res://scenes/actors/player/states/move.gd" id="5_s66g8"]
+[ext_resource type="Script" path="res://scenes/actors/player/states/jump.gd" id="6_m7r5e"]
 [ext_resource type="Texture2D" uid="uid://bdghay42uan2x" path="res://common/art/meta/icon.svg" id="7_gsiys"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j17oi"]
