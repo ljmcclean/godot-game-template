@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
-var gravity : float = 10000.0
+var gravity : float = 15000.0
 var jump_gravity : float = 8500.0
 var acceleration : float = 10000.0
 var friction : float = 25000.0

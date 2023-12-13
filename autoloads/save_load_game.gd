@@ -1,4 +1,4 @@
-class_name SaveLoadGameDocs
+class_name DocsSaveLoadGame
 extends Node
 ## Used for saving and loading the game in an encrypted binary format.
 

@@ -1,4 +1,4 @@
-class_name SceneManagerDocs
+class_name DocsSceneManager
 extends Node
 ## Used for managing, loading, removing, and switching scenes.
 ##
@@ -53,6 +53,14 @@ func add_scene_to_tree(scene_alias : String) -> void:
 ## Restarts the scene.
 func restart_scene() -> void:
 	get_tree().reload_current_scene()
+
+## Sets the process mode for the scene tree to paused.
+func pause_game() -> void:
+	get_tree().paused = true
+
+## Changes the process mode for the scene tree to unpaused.
+func resume_game() -> void:
+	get_tree().paused = false
 
 ## Manages the quit game process.
 func quit_game() -> void:

@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scenes/menus/settings_menu/settings_menu.gd" id="1_ce56f"]
 
 [node name="SettingsMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,7 +45,7 @@ theme_override_constants/separation = 17
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Quit
+text = "Return
 "
 
 [connection signal="button_up" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_button_up"]
