@@ -5,8 +5,7 @@
 - You must update the scene manager every time you add a scene which you
 would like it to have access to.
 
-	- You will need to add the scene's alias and preload it in the first dictionary and
-	add its alias and its path in the second dictionary.
+	- You will need to add the scene's alias and path to the `scenes` dictionary.
 
 - To switch scenes simply call `switch_scenes("alias")` or, alternatively,
 if the scene is large and you would like a loading screen you can call 
