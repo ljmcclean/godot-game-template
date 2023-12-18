@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c07gen68ouqhw"]
+[gd_scene load_steps=3 format=3 uid="uid://c07gen68ouqhw"]
 
 [ext_resource type="Script" path="res://scenes/menus/settings_menu/settings_menu.gd" id="1_ce56f"]
+[ext_resource type="AudioBusLayout" uid="uid://c0xu3x75bir0j" path="res://default_bus_layout.tres" id="2_02fxl"]
 
 [node name="SettingsMenu" type="Control"]
 process_mode = 3
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ce56f")
+bus_layout = ExtResource("2_02fxl")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -22,30 +24,269 @@ grow_vertical = 2
 color = Color(0.117647, 0.117647, 0.129412, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(1000, 550)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = -275.0
-offset_right = 500.0
-offset_bottom = 275.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(1050, 550)
 layout_mode = 2
+offset_left = 51.0
+offset_top = 49.0
+offset_right = 1101.0
+offset_bottom = 599.0
 size_flags_horizontal = 4
-theme_override_constants/separation = 17
+size_flags_vertical = 4
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(250, 75)
+[node name="TabContainer" type="TabContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Return
+theme_override_font_sizes/font_size = 25
+
+[node name="Audio" type="VBoxContainer" parent="MarginContainer/TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Audio"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="MasterLine" type="GridContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="MasterLabel" type="RichTextLabel" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MasterLine"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "[b]Master[/b]"
+
+[node name="MasterSlider" type="HSlider" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MasterLine"]
+custom_minimum_size = Vector2(500, 37)
+layout_mode = 2
+min_value = -60.0
+max_value = 0.0
+
+[node name="SFXLine" type="GridContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="MasterLabel" type="RichTextLabel" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXLine"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "	SFX"
+
+[node name="SFXSlider" type="HSlider" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXLine"]
+custom_minimum_size = Vector2(500, 37)
+layout_mode = 2
+min_value = -60.0
+max_value = 0.0
+
+[node name="MusicLine" type="GridContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="MasterLabel" type="RichTextLabel" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicLine"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "	Music"
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicLine"]
+custom_minimum_size = Vector2(500, 37)
+layout_mode = 2
+min_value = -60.0
+max_value = 0.0
+
+[node name="Controls" type="VBoxContainer" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Controls"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Controls/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="JumpLine" type="GridContainer" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+columns = 5
+
+[node name="JumpInput" type="Button" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/JumpLine"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "Jump
 "
 
-[connection signal="button_up" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_button_up"]
+[node name="Input1" type="Label" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/JumpLine"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "W"
+horizontal_alignment = 1
+
+[node name="Input2" type="Label" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/JumpLine"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Space Bar"
+horizontal_alignment = 1
+
+[node name="Input3" type="Label" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/JumpLine"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Up Arrow"
+horizontal_alignment = 1
+
+[node name="ClearButton" type="Button" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/JumpLine"]
+modulate = Color(1, 1, 1, 0.784314)
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Clear"
+
+[node name="LeftLine" type="GridContainer" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+columns = 5
+
+[node name="LeftInput" type="Button" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/LeftLine"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "Move Left"
+
+[node name="Input1" type="Label" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/LeftLine"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "A"
+horizontal_alignment = 1
+
+[node name="Input2" type="Label" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/LeftLine"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Left Arrow"
+horizontal_alignment = 1
+
+[node name="Input3" type="Label" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/LeftLine"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+
+[node name="ClearButton" type="Button" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/LeftLine"]
+modulate = Color(1, 1, 1, 0.784314)
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Clear"
+
+[node name="RightLine" type="GridContainer" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+columns = 5
+
+[node name="RightInput" type="Button" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/RightLine"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "Move Right"
+
+[node name="Input1" type="Label" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/RightLine"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "D"
+horizontal_alignment = 1
+
+[node name="Input2" type="Label" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/RightLine"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Right Arrow"
+horizontal_alignment = 1
+
+[node name="Input3" type="Label" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/RightLine"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+
+[node name="ClearButton" type="Button" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/RightLine"]
+modulate = Color(1, 1, 1, 0.784314)
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Clear"
+
+[node name="DownLine" type="GridContainer" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+columns = 5
+
+[node name="DownInput" type="Button" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/DownLine"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "Down"
+
+[node name="Input1" type="Label" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/DownLine"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "S"
+horizontal_alignment = 1
+
+[node name="Input2" type="Label" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/DownLine"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Down Arrow"
+horizontal_alignment = 1
+
+[node name="Input3" type="Label" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/DownLine"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+
+[node name="ClearButton" type="Button" parent="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/DownLine"]
+modulate = Color(1, 1, 1, 0.784314)
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Clear"
+
+[node name="Video" type="VBoxContainer" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Game Settings" type="VBoxContainer" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[connection signal="toggled" from="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/JumpLine/JumpInput" to="." method="_on_jump_input_toggled"]
+[connection signal="toggled" from="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/LeftLine/LeftInput" to="." method="_on_left_input_toggled"]
+[connection signal="toggled" from="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/RightLine/RightInput" to="." method="_on_right_input_toggled"]
+[connection signal="toggled" from="MarginContainer/TabContainer/Controls/MarginContainer/VBoxContainer/DownLine/DownInput" to="." method="_on_down_input_toggled"]

@@ -31,6 +31,11 @@ SaveLoadGame="*res://autoloads/save_load_game.gd"
 SceneManager="*res://autoloads/scene_manager/scene_manager.tscn"
 GameData="*res://autoloads/data/game_data.gd"
 PlayerData="*res://autoloads/data/player_data.gd"
+Settings="*res://autoloads/data/settings.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [file_customization]
 
