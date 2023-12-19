@@ -17,12 +17,19 @@
   
   > Uses encrypted binary serialization to provide security, a smaller save file,
   > and a custom save structure. This system is highly customizable for more
-  > complex projects.
+  > complex projects. Also contains methods for saving and loading user
+  > preferences (controls, volume, etc.).
   
 - Scene Manager
   
   > A simple scene manager to provide additional utilites such as a loading screen
   > and simple pause and resume functions to abstract and simplify basic processes.
+
+- Basic Menus
+  > Simple main menu, loading screen, and settings menu. They are purely functional
+  > and will require sprucing up. They have built in scene changes and buttons for
+  > necessary interaction. The settings menu interfaces with necessary systems
+  > and can update and save user preferences.
 <br>
 
 #### Additional Information
