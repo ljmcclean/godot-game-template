@@ -27,4 +27,4 @@ sure all calls to its methods are removed.
 	scene.<br><br>
 
 	> *Note:* This makes the "loading_screen" scene obsolete, so it can be removed
-	>  as well
+	>  as well.
