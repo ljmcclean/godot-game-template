@@ -1,4 +1,4 @@
-# 2D Platformer Template (***In Progress***)
+# Godot Game Template (***In Progress***)
 
 *Made with Godot 4.2*
 
