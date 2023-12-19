@@ -57,34 +57,3 @@ func load_game() -> void:
 	deserialize(GameData)
 	deserialize(PlayerData)
 	close_file()
-
-
-## Formatted structure for saving user settings to a .cfg file.
-func save_settings() -> void:
-	var config = ConfigFile.new()
-	for setting in Settings.audio_settings:
-		config.set_value("audio_settings", setting, Settings.audio_settings[setting])
-	for setting in Settings.controls_settings:
-		config.set_value("controls_settings", setting, Settings.controls_settings[setting])
-	for setting in Settings.video_settings:
-		config.set_value("video_settings", setting, Settings.video_settings[setting])
-	for setting in Settings.game_settings:
-		config.set_value("game_settings", setting, Settings.game_settings[setting])
-	config.save("user://settings.cfg")
-
-
-## Formatted structure for loading user settings from a .cfg file.
-func load_settings() -> Error:
-	var config = ConfigFile.new()
-	var err = config.load("user://settings.cfg")
-	if (err != OK):
-		return err 
-	for setting in config.get_section_keys("audio_settings"):
-		Settings.audio_settings[setting] = config.get_value("audio_settings", setting)
-	for setting in config.get_section_keys("controls_settings"):
-		Settings.controls_settings[setting] = config.get_value("controls_settings", setting)
-	for setting in config.get_section_keys("video_settings"):
-		Settings.video_settings[setting] = config.get_value("video_settings", setting)
-	for setting in config.get_section_keys("game_settings"):
-		Settings.game_settings[setting] = config.get_value("game_settings", setting)
-	return err

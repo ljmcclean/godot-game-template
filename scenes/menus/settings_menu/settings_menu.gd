@@ -9,7 +9,7 @@ extends Control
 
 func _ready() -> void:
 	SceneManager.pause_game()
-	prepare_audio()
+	#prepare_audio()
 
 
 func _input(event: InputEvent) -> void:
@@ -18,8 +18,9 @@ func _input(event: InputEvent) -> void:
 		queue_free.call_deferred()
 
 
-func prepare_audio() -> void:
-	master_slider.value = bus_layout.
+#func prepare_audio() -> void:
+	#master_slider.value = bus_layout.master
+
 #region Input Mapping
 func _on_jump_input_toggled(toggled_on: bool) -> void:
 	if toggled_on:
