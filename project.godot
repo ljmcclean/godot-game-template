@@ -25,6 +25,10 @@ config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/show_image=false
 config/icon="res://common/art/meta/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://common/resources/default_bus_layout.tres"
+
 [autoload]
 
 SaveLoadGame="*res://autoloads/save_load_game.gd"

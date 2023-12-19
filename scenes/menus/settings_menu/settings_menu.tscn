@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c07gen68ouqhw"]
 
 [ext_resource type="Script" path="res://scenes/menus/settings_menu/settings_menu.gd" id="1_ce56f"]
-[ext_resource type="AudioBusLayout" uid="uid://c0xu3x75bir0j" path="res://default_bus_layout.tres" id="2_02fxl"]
+[ext_resource type="AudioBusLayout" uid="uid://c0xu3x75bir0j" path="res://common/resources/default_bus_layout.tres" id="2_02fxl"]
 
 [node name="SettingsMenu" type="Control"]
 process_mode = 3
