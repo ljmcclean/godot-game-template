@@ -3,18 +3,18 @@ extends Node
 ## Used for saving and loading the game in an encrypted binary format.
 
 ## The file to save and load from.
-var file : FileAccess
+var file: FileAccess
 ## The path to the file.
-var file_path : String
+var file_path: String
 ## The password for encrypting the file data.
-var password : String
+var password: String
 
 #WARNING must be removed if multiple save files implemented
 func _ready() -> void:
 	initialize("user://savegame.sav", "password")
 
 ## Initializes SaveLoadGame with a file path and password.
-func initialize(f_path : String, f_password : String) -> void:
+func initialize(f_path: String, f_password: String) -> void:
 	file_path = f_path
 	password = f_password
 
@@ -26,7 +26,7 @@ func clear() -> void:
 
 ## Opens or creates the file with the given access.
 ## The file is encrypted and requires a password.
-func open_file(access : FileAccess.ModeFlags) -> int:
+func open_file(access: FileAccess.ModeFlags) -> int:
 	file = FileAccess.open_encrypted_with_pass(file_path, access, password)
 	return FileAccess.get_open_error() if (file == null) else OK
 

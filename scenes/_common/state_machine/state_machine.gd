@@ -1,9 +1,9 @@
 class_name StateMachine
 extends Node
 
-@export var initial_state : State
+@export var initial_state: State
 
-var state : State
+var state: State
 
 
 func initialize() -> void:
@@ -13,25 +13,20 @@ func initialize() -> void:
 	change_state(initial_state)
 
 
-func change_state(new_state : State) -> void:
+func change_state(new_state: State) -> void:
 	if state:
 		state.exit()
 	state = new_state
-	state_debug(state)
 	state.enter()
 
 
-func physics_update(delta : float) -> void:
+func physics_update(delta: float) -> void:
 	state.physics_update(delta)
 
 
-func update(delta : float) -> void:
+func update(delta: float) -> void:
 	state.update(delta)
 
 
-func handle_input(event : InputEvent) -> void:
+func handle_input(event: InputEvent) -> void:
 	state.handle_input(event)
-
-
-func state_debug(debug_state : State) -> void:
-	debug_state.debug()

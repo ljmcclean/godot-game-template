@@ -1,10 +1,10 @@
 extends Control
 
-var target_scene_path : StringName
-var loading_status : int
-var progress : Array[float]
+var target_scene_path: StringName
+var loading_status: int
+var progress: Array[float]
 
-@onready var progress_bar : ProgressBar = $ProgressBar
+@onready var progress_bar: ProgressBar = $ProgressBar
 
 
 func _ready() -> void:

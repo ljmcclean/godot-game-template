@@ -1,19 +1,19 @@
 extends PlayerState
 
-@export var idle_state : State
-@export var jump_state : State
-@export var move_state : State
+@export var idle_state: State
+@export var jump_state: State
+@export var move_state: State
 
 
 func enter() -> void:
 	super()
 
 
-func handle_input(_event : InputEvent) -> void:
+func handle_input(_event: InputEvent) -> void:
 	pass
 
 
-func physics_update(delta : float) -> void:
+func physics_update(delta: float) -> void:
 	player.velocity.y += player.gravity*delta
 	if (player.get_input_vector().x != 0) and (player.velocity.x*player.get_input_vector().x > 0):
 		player.velocity.x += player.get_input_vector().x*player.air_acceleration*delta
@@ -29,6 +29,3 @@ func physics_update(delta : float) -> void:
 		state_machine.change_state(move_state)
 	elif player.is_grounded():
 		state_machine.change_state(idle_state)
-
-func debug() -> void:
-	player.modulate = Color(1, 0, 0, 1)

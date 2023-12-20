@@ -1,10 +1,10 @@
 extends PlayerState
 
-@export var fall_state : State
-@export var idle_state : State
-@export var move_state : State
+@export var fall_state: State
+@export var idle_state: State
+@export var move_state: State
 
-var just_jumped : bool = true
+var just_jumped: bool = true
 
 
 func enter() -> void:
@@ -14,11 +14,11 @@ func enter() -> void:
 	just_jumped_timer()
 
 
-func process_input(_event : InputEvent) -> void:
+func process_input(_event: InputEvent) -> void:
 	pass
 
 
-func physics_update(delta : float) -> void:
+func physics_update(delta: float) -> void:
 	player.velocity.y += player.jump_gravity*delta
 	if (player.get_input_vector().x != 0) and (player.velocity.x*player.get_input_vector().x > 0):
 		player.velocity.x += player.get_input_vector().x*player.air_acceleration*delta
@@ -42,7 +42,3 @@ func physics_update(delta : float) -> void:
 func just_jumped_timer() -> void:
 	await get_tree().create_timer(.01).timeout
 	just_jumped = false
-
-
-func debug() -> void:
-	player.modulate = Color(0, 0, 1, 1)

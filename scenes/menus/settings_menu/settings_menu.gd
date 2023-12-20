@@ -1,10 +1,8 @@
 extends Control
 
-@export var bus_layout : AudioBusLayout
-
-@onready var master_slider : HSlider = $MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MasterLine/MasterSlider
-@onready var sfx_slider : HSlider = $MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXLine/SFXSlider
-@onready var music_slider : HSlider = $MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicLine/MusicSlider
+@onready var master_slider: HSlider = $MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MasterLine/MasterSlider
+@onready var sfx_slider: HSlider = $MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXLine/SFXSlider
+@onready var music_slider: HSlider = $MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicLine/MusicSlider
 
 
 func _ready() -> void:
