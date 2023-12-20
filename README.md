@@ -34,6 +34,9 @@
 
 #### Additional Information
 
+This project is free to use, modify, or redistribute (see LICENSE). Credit is not required but it is
+appreciated. If you would like to credit me feel free to link my [GitHub account](https://github.com/LucksDev).
+
 This template is just to get a new project up and running, most of the systems will need to be changed to suit a new project.
 Please reference the documentation (in-editor and in this repo) to see how to safely change or remove systems.
 
