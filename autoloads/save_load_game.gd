@@ -42,6 +42,19 @@ func serialize(object) -> void:
 func deserialize(object) -> void:
 	object.deserialize(file)
 
+##TODO Finish user_prefs
+func save_user_prefs(file_path: String = "user://user_prefs.cfg") -> void:
+	var config := ConfigFile.new()
+	
+	config.save(file_path)
+
+##TODO Finish user_prefs
+func load_user_prefs(file_path: String = "user://user_prefs.cfg") -> void:
+	var config := ConfigFile.new()
+	var err: Error = config.load(file_path)
+	if err != OK:
+		return
+
 ## Formatted structure for saving the entire game.
 ## (Structure mirrors load_game())
 func save_game() -> void:
