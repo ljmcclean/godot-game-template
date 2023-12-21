@@ -40,11 +40,13 @@ get going.
 
 ## How To Use
 
-For specific details about each of the systems you can reference the [_docs] folder or you can
+For specific details about each of the systems you can reference the 
+[_docs](https://github.com/LucksDev/godot_game_template/tree/main/_docs) folder or you can
 use Godot's in-editor class reference. All systems that come with this template can be found in
 the class reference by prefixing their name with "Docs" (e.g. `DocsAudioManager`).
 
-For best practices and style guide you can reference the [style_guide].
+For best practices and style guide you can reference the 
+[style_guide](https://github.com/LucksDev/godot_game_template/blob/main/_docs/style_guide.md).
 
 **Autoload Roles**:
 
