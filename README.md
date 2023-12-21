@@ -1,6 +1,6 @@
 # Godot Game Template (***In Progress***)
 
-![Static Badge](https://img.shields.io/badge/Godot-4.2-blue?style=flat-square&labelColor=121821) 
+![Static Badge](https://img.shields.io/badge/Godot-4.2-blue?logo=godotengine&logoColor=ffffff&style=flat-square&labelColor=121821) 
 ![Static Badge](https://img.shields.io/badge/License-MIT-750014?style=flat-square&labelColor=121821)
 
 #### Includes: 
