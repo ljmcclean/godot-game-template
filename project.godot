@@ -34,6 +34,7 @@ buses/default_bus_layout="res://common/resources/default_bus_layout.tres"
 SaveLoadGame="*res://autoloads/save_load_game.gd"
 SceneManager="*res://autoloads/scene_manager/scene_manager.tscn"
 AudioManager="*res://autoloads/audio_manager.gd"
+Events="*res://autoloads/events.gd"
 GameData="*res://autoloads/data/game_data.gd"
 PlayerData="*res://autoloads/data/player_data.gd"
 

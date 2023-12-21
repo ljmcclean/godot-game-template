@@ -7,7 +7,9 @@ extends Node
 ## scenes to be changed with a transition.
 
 
-## Scene aliases are keyed to String scene paths.
+## Scene aliases, informal names given for scenes, are keyed to those scenes'
+## paths. It is [b]critical[/b] that this is updated when scene file locations are
+## changed or new scenes are added.
 var scenes: Dictionary = {
 	"main_scene": "res://scenes/main/main.tscn",
 	"main_menu": "res://scenes/menus/main_menu/main_menu.tscn",
@@ -18,28 +20,28 @@ var scenes: Dictionary = {
 
 ## The alias for the currently active scene.
 var current_scene_alias: String = ""
-## The path for the scene to be loaded (used by load_scene()).
+## The path for the scene to be loaded (used by [method load_scene]).
 var load_scene_path: StringName
 
 
 func _ready() -> void:
 	current_scene_alias = "main_scene"
 
-## Adds a scene's alias and path to the scenes Dictionary.
+## Adds a scene's alias and path to [member scenes].
 func add_scene(scene_alias: String, scene_path: String) -> void:
 	scenes[scene_alias] = scene_path
 
-## Removes a scene's alias and path from the scenes Dictionary.
+## Removes a scene's alias and path from [member scenes].
 func remove_scene(scene_alias: String) -> void:
 	scenes.erase(scene_alias)
 
-## Clears the tree and adds the new scene (updates current_scene_alias).
+## Clears the tree and adds the new scene (updates [member current_scene_alias]).
 func switch_scene(scene_alias: String) -> void:
 	get_tree().change_scene_to_file(scenes[scene_alias])
 	current_scene_alias = scene_alias
 
-## Replaces tree with "loading_screen" and loads the new scene 
-## (updates current_scene_alias).
+## Replaces tree with [LoadingScreen] and loads the new scene 
+## (updates [member current_scene_alias]).
 func load_scene(scene_alias: String) -> void:
 	load_scene_path = scenes[scene_alias]
 	get_tree().change_scene_to_file.call_deferred(scenes["loading_screen"])
@@ -54,11 +56,15 @@ func add_scene_to_tree(scene_alias: String) -> void:
 func restart_scene() -> void:
 	get_tree().reload_current_scene()
 
-## Sets the process mode for the scene tree to paused.
+## Sets [member SceneTree.paused] for the scene tree to true. This pauses all
+## nodes whose [member Node.process_mode] is set to 
+## [constant Node.PROCESS_MODE_PAUSABLE].
 func pause_game() -> void:
 	get_tree().paused = true
 
-## Changes the process mode for the scene tree to unpaused.
+## Changes [member SceneTree.paused] for the scene tree to false.This unpauses
+## all nodes whose [member Node.process_mode] is set to 
+## [constant Node.PROCESS_MODE_PAUSABLE].
 func resume_game() -> void:
 	get_tree().paused = false
 

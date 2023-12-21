@@ -1,6 +1,10 @@
 class_name DocsAudioManager
 extends Node
 ## Provides functions for managing game audio.
+##
+## This class can be used in lieu of low-level interactions with Godot's
+## [AudioServer]. The abstraction can be used to keep code elsewhere cleaner
+## and prevent inconsistent handling of transitions or effects.
 
 ## Sets the volume of the specified bus given a percentage value for volume.
 func set_volume(bus_index: int, volume: float) -> void:
