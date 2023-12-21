@@ -3,7 +3,10 @@
 ![Static Badge](https://img.shields.io/badge/Godot-4.2-blue?logo=godotengine&logoColor=ffffff&style=flat-square&labelColor=121821) 
 ![Static Badge](https://img.shields.io/badge/License-MIT-750014?style=flat-square&labelColor=121821)
 
+### [Get Started](https://github.com/LucksDev/godot_game_template/blob/main/_docs/GETTING_STARTED.md)
+
 #### Includes: 
+
 - Player
   
   > Basic movement state machine with idle, moving, jumping, and falling states
@@ -39,8 +42,11 @@
 
 #### Additional Information
 
-This project is free to use, modify, or redistribute (see LICENSE). Credit is not required but it is
-appreciated. If you would like to credit me feel free to link my [GitHub account](https://github.com/LucksDev).
+This project is free to use, modify, or redistribute 
+(see [LICENSE](https://github.com/LucksDev/godot_game_template/blob/main/LICENSE)). 
+Credit is not required but it is
+appreciated. If you would like to credit me feel free to link my 
+[GitHub account](https://github.com/LucksDev).
 
 Godot Download: [Download](godotengine.org/download)
 - Godot License: [License](godotengine.org/license)
