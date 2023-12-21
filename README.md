@@ -1,6 +1,7 @@
 # Godot Game Template (***In Progress***)
 
-*Made with Godot 4.2*
+![Static Badge](https://img.shields.io/badge/Godot-4.2-blue?style=flat-square&labelColor=121821) 
+![Static Badge](https://img.shields.io/badge/License-MIT-750014?style=flat-square&labelColor=121821)
 
 #### Includes: 
 - Player
