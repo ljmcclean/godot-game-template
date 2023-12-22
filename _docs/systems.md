@@ -2,7 +2,7 @@
 
 This file contains documentation for all of the core systems of this template.
 It contains both broad information and specific use cases. More specific
-information can be found in Godot's in-editor [class reference](#in-editordocumentation).
+information can be found in Godot's in-editor [class reference](#ineditor-documentation).
 
 
 ## In-Editor Documentation
