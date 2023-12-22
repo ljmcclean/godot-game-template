@@ -116,7 +116,7 @@ and for notes on the project structure you can reference the
 
 - SaveLoadGame
 
-  > [Save & Load Game Documentation](_docs/systems.md#save-load-game)
+  > [Save & Load Game Documentation](_docs/systems.md#save--load-game)
 
   - This class is used for saving and loading the game with encrypted binary serialization. This means
     that this class is likely the most flexible but also one of the most complex of all of the autoloads.
