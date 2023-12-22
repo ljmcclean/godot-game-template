@@ -5,27 +5,28 @@ It contains both broad information and specific use cases. More specific
 information can be found in Godot's in-editor class reference (see below).
 
 
-## In-Editor Documentation
+> ### In-Editor Documentation
+> 
+> Documentation can be found in the Godot's in-editor class reference. A search prefixed with "Docs"
+> will pull up references for the systems (e.g. `DocsSaveLoadGame`). 
+> 
+> <details>
+> <summary><b>Current Documentation</b>:</summary>
+> 
+> - DocsSceneManager
+> 
+> - DocsSaveLoadGame
+> 
+> - DocsEvents
+> 
+> - DocsAudioManager
+> 
+> - LoadingScreen
+> </details>
 
-Documentation can be found in the Godot's in-editor class reference. A search prefixed with "Docs"
-will pull up references for the systems (e.g. `DocsSaveLoadGame`). 
+## Systems
 
-<details>
-<summary><b>Current Documentation</b>:</summary>
-
-- DocsSceneManager
-
-- DocsSaveLoadGame
-
-- DocsEvents
-
-- DocsAudioManager
-
-- LoadingScreen
-</details>
-
-
-## Audio Manager
+### Audio Manager
 
 > AudioManager
 
@@ -47,8 +48,9 @@ will pull up references for the systems (e.g. `DocsSaveLoadGame`).
 
   - These calls can be found in the "settings_menu" scene.
 
+___
 
-## Events
+### Events
 
 > Events
 
@@ -74,8 +76,9 @@ will pull up references for the systems (e.g. `DocsSaveLoadGame`).
     - It has no calls made to it elsewhere, it is only intended to
       serve as an example implementation.
 
+___
 
-## Save & Load Game
+### Save & Load Game
 
 > SaveLoadGame
 
@@ -109,8 +112,9 @@ sure all calls to its methods are removed.
 - Additionally, the `serialize()` and `deserialize()` methods found in the data
 autoloads can be removed.
 
+___
 
-## Scene Manager
+### Scene Manager
 
 > SceneManager
 
