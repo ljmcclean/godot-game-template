@@ -30,9 +30,8 @@ information can be found in Godot's in-editor class reference (see below).
 
 > AudioManager
 
-**Usage**:
-
-**Overview**:
+<details>
+<summary><b>Overview</b>:</summary>
 
 - The audio manager is used in conjunction with the primary audio bus layout
   "default_bus_layout.tres" which can be found in the audio subfolder which is
@@ -42,11 +41,70 @@ information can be found in Godot's in-editor class reference (see below).
   from 0.0 to 1.0. The built-in method `linear_to_db()` is used to make these
   values usable.
 
-**Removal**:
+![Sample Audio Bus Layout](https://github.com/LucksDev/godot_game_template/assets/121735106/240d5893-fbfe-4368-8189-d9c7f12a9147)
+
+>This is a sample audio bus layout in Godot. In this example the "Master" bus
+>is at index one, the "Music" bus is at index two, etc.
+
+</details>
+
+<details>
+<summary><b>Usage</b>:</summary>
+
+#### Set bus volume
+
+Signature:
+```gdscript
+func set_volume(bus_index: int, volume: float) -> void:
+	...
+```
+Sample call:
+```gdscript
+AusioManager.set_volume(2, .5)
+```
+> This call would set the volume for bus two to half.
+
+___
+
+#### Fade bus in
+
+Signature:
+```gdscript
+func fade_in(bus_index: int, volume: float, duration: float) -> void:
+	...
+```
+Sample call:
+```gdscript
+AusioManager.fade_in(1, .2, 1.3)
+```
+> This call would fade bus one's volume to twenty percent over
+> the span of 1.3 seconds.
+
+___
+
+#### Fade bus out
+
+Signature:
+```gdscript
+func fade_out(bus_index: int, duration: float) -> void:
+	...
+```
+Sample call:
+```gdscript
+AusioManager.fade_out(3, .4)
+```
+> This call would fade bus three's volume to zero over the
+> span of .4 seconds.
+
+</details>
+
+<details>
+<summary><b>Removal</b>:</summary>
 
 - This function can be deleted and all calls made to it removed.
 
   - These calls can be found in the "settings_menu" scene.
+</details>
 
 ___
 
@@ -54,9 +112,8 @@ ___
 
 > Events
 
-**Usage**:
-
-**Overview**:
+<details>
+<summary><b>Overview</b>:</summary>
 
 - The intent of the "Events" autoload is to make the propogation of global
   signals more streamlined. This autoload is not for all signals but rather
@@ -68,13 +125,20 @@ ___
   > make it difficult to track all connections for debugging or
   > refactoring. Because of this, try to keep the usage to a minimum and
   > use it only when it is the best option.
+</details>
 
-**Removal**:
+<details>
+<summary><b>Usage</b>:</summary>
+</details>
+
+<details>
+<summary><b>Removal</b>:</summary>
 
 - This system can simply be deleted.
   
     - It has no calls made to it elsewhere, it is only intended to
       serve as an example implementation.
+</details>
 
 ___
 
@@ -82,9 +146,8 @@ ___
 
 > SaveLoadGame
 
-**Usage**:
-
-**Overview**:
+<details>
+<summary><b>Overview</b>:</summary>
 	
 - Every object you wish to save must have a `serialize()` and `deserialize()`
 method.
@@ -100,8 +163,14 @@ these methods (the order needs to be mirrored for save and load).
 	> for saving and loading, you may have the game save from anywhere and load
 	> from anywhere. It is very important that the game is saved and loaded in
 	> the same order.
+</details>
+ 
+<details>
+<summary><b>Usage</b>:</summary>
+</details>
 
-**Removal:**
+<details>
+<summary><b>Removal</b>:</summary>
 
 - This system can be safely removed, simply delete the autoload and make 
 sure all calls to its methods are removed.
@@ -111,6 +180,7 @@ sure all calls to its methods are removed.
 
 - Additionally, the `serialize()` and `deserialize()` methods found in the data
 autoloads can be removed.
+</details>
 
 ___
 
@@ -118,9 +188,8 @@ ___
 
 > SceneManager
 
-**Usage**:
-
-**Overview**:
+<details>
+<summary><b>Overview</b>:</summary>
 	
 - You must update the scene manager every time you add a scene which you
 would like it to have access to.
@@ -137,8 +206,15 @@ you may call the `add_scene()` method.
 	> *Note:* You will likely want to remove this scene using `queue_free()` or a
 	> similar process as using `switch_scene()` or `load_scene()` will clear the
 	> entire tree.
+</details>
 
-**Removal:**
+<details>
+<summary><b>Usage</b>:</summary>
+</details>
+
+
+<details>
+<summary><b>Removal</b>:</summary>
 
 - This system can be safely removed, simply delete the autoload and make 
 sure all calls to its methods are removed.
@@ -148,3 +224,4 @@ sure all calls to its methods are removed.
 
 	> *Note:* This makes the "loading_screen" scene obsolete, so it can be removed
 	>  as well.
+</details>
