@@ -86,36 +86,37 @@ get going.
 ## Further Information
 
 For specific details about each of the systems you can reference the [docs](_docs) or you can use 
-Godot's in-editor class reference ([learn more](_docs/in-editor-documentation.md)). 
+Godot's in-editor class reference ([learn more](_docs/systems.md#ineditor-documentation)). 
 
-For best practices and style guide you can reference the [style_guide](_docs/style_guide.md). And for 
-notes on the project structure you can reference the [file structure documentation](_docs/file_structure.md).
+For notes on coding style you can reference the [style guide](_docs/best_practices.md#style-guide)
+and for notes on the project structure you can reference the 
+[file structure](_docs/best_practices.md#file-structure) documentation.
 
 **Autoload Roles**:
 
 - SceneManager
   
-  > [Scene_Manager Documentation](_docs/scene_manager.md)
+  > [Scene Manager Documentation](_docs/systems.md#scene-manager)
   
   - The scene manager is used for handling scene changes and transitions. It comes with several
     methods for handling loading screens, additive loads, etc.
     
 - AudioManager
 
-  > [Audio Manager Documentation](_docs/audio_manager.md)
+  > [Audio Manager Documentation](_docs/systems.md#audio-manager)
   
   - The audio manager serves the role of abstracting low-level interactions with Godot's `AudioServer`
     while simultaneously ensuring consistent transitions for volume and effects.
 
 - Events
 
-  > [Events Documentation](_docs/events.md)
+  > [Events Documentation](_docs/_docs/systems.md#events)
 
   - The events singleton provides a single point for global signal handling.
 
 - SaveLoadGame
 
-  > [Save & Load Game Documentation](_docs/save_load_game.md)
+  > [Save & Load Game Documentation](_docs/_docs/systems.md#save-load-game)
 
   - This class is used for saving and loading the game with encrypted binary serialization. This means
     that this class is likely the most flexible but also one of the most complex of all of the autoloads.
