@@ -16,10 +16,10 @@
 - ***scenes***
     - This folder contains all scenes that are used in the project. Everything
       from the player to the main menu is in this folder. Subfolders within
-      help to organize these scenes by use or any manner which you'd like.
+      help to organize these scenes -- by use or any manner which you'd like.
   
 > An optional fourth folder ***addons*** can be created if your project
-> uses third-party assets or plugins. The intent of this folder is to
+> uses third-party assets or plugins. The purpose of this folder is to
 > help seperate external code and assets from your own work.
 
 **Notes**:
