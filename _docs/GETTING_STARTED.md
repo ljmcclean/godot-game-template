@@ -5,9 +5,8 @@ of these templates serve the role of providing out-of-the-box, behind the scenes
 make development easier. This template is similar sans the 'behind the scenes'. The goal of this
 project is that you would not only have a solid basis for your project but that you would also
 have a clear understanding of and ability to modify its underlying systems. That being said, you
-will need to update these systems as your project progresses. While that may sound like a nuisance,
-I would argue that this method will provide you a greater ability to customize and make full use
-of these systems.
+will need to update these systems as your project progresses. This process should provide you a 
+greater ability to customize and make full use of these systems.
 
 There are two options to get started:
 
@@ -74,7 +73,7 @@ notes on the project structure you can reference the
 
 - SaveLoadGame
 
-  [Save & Load Game Documentation](https://github.com/LucksDev/godot_game_template/blob/main/_docs/save_load_game.md)
+  > [Save & Load Game Documentation](https://github.com/LucksDev/godot_game_template/blob/main/_docs/save_load_game.md)
 
   - This class is used for saving and loading the game with encrypted binary serialization. This means
     that this class is likely the most flexible but also one of the most complex of all of the autoloads.
