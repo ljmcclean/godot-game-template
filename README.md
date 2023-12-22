@@ -127,7 +127,7 @@ and for notes on the project structure you can reference the
     
 ## Resources, Credit, & Licensing
 
-This project is free to use, modify, or redistribute (see [LICENSE](LICENSE.md)). Credit is not required
+This project is free to use, modify, or redistribute (see [LICENSE](LICENSE)). Credit is not required
 but it is appreciated. If you would like to credit me feel free to link my 
 [GitHub account](https://github.com/LucksDev).
 
