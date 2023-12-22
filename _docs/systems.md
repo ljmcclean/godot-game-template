@@ -2,8 +2,27 @@
 
 This file contains documentation for all of the core systems of this template.
 It contains both broad information and specific use cases. More specific
-information can be found in Godot's in-editor class reference
-([learn more](_docs/in_editor_documentation.md)).
+information can be found in Godot's in-editor [class reference](#in-editordocumentation).
+
+
+## In-Editor Documentation
+
+Documentation can be found in the Godot's in-editor class reference. A search prefixed with "Docs"
+will pull up references for the systems (e.g. `DocsSaveLoadGame`). 
+
+<details>
+<summary><b>Current Documentation</b>:</summary>
+
+- DocsSceneManager
+
+- DocsSaveLoadGame
+
+- DocsEvents
+
+- DocsAudioManager
+
+- LoadingScreen
+</details>
 
 
 ## Audio Manager
