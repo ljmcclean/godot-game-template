@@ -27,6 +27,8 @@ will pull up references for the systems (e.g. `DocsSaveLoadGame`).
 
 ## Audio Manager
 
+> AudioManager
+
 **Usage**:
 
 **Overview**:
@@ -47,6 +49,8 @@ will pull up references for the systems (e.g. `DocsSaveLoadGame`).
 
 
 ## Events
+
+> Events
 
 **Usage**:
 
@@ -71,7 +75,9 @@ will pull up references for the systems (e.g. `DocsSaveLoadGame`).
       serve as an example implementation.
 
 
-## SaveLoadGame
+## Save & Load Game
+
+> SaveLoadGame
 
 **Usage**:
 
@@ -104,7 +110,9 @@ sure all calls to its methods are removed.
 autoloads can be removed.
 
 
-## SceneManager
+## Scene Manager
+
+> SceneManager
 
 **Usage**:
 
