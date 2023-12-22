@@ -56,12 +56,14 @@ information can be found in Godot's in-editor class reference (see below).
 Signature:
 ```gdscript
 func set_volume(bus_index: int, volume: float) -> void:
-	...
+    ...
 ```
+
 Sample call:
 ```gdscript
-AusioManager.set_volume(2, .5)
+AudioManager.set_volume(2, .5)
 ```
+
 > This call would set the volume for bus two to half.
 
 ___
@@ -71,12 +73,14 @@ ___
 Signature:
 ```gdscript
 func fade_in(bus_index: int, volume: float, duration: float) -> void:
-	...
+    ...
 ```
+
 Sample call:
 ```gdscript
-AusioManager.fade_in(1, .2, 1.3)
+AudioManager.fade_in(1, .2, 1.3)
 ```
+
 > This call would fade bus one's volume to twenty percent over
 > the span of 1.3 seconds.
 
@@ -87,12 +91,14 @@ ___
 Signature:
 ```gdscript
 func fade_out(bus_index: int, duration: float) -> void:
-	...
+    ...
 ```
+
 Sample call:
 ```gdscript
-AusioManager.fade_out(3, .4)
+AudioManager.fade_out(3, .4)
 ```
+
 > This call would fade bus three's volume to zero over the
 > span of .4 seconds.
 
@@ -129,6 +135,61 @@ ___
 
 <details>
 <summary><b>Usage</b>:</summary>
+
+ #### Declare a signal
+
+ ```gdscript
+signal player_died
+```
+
+> With parameters:
+> ```gdscript
+> signal player_hit(damage: int, enemy_type: String)
+> ```
+
+___
+
+#### Connect a signal
+
+Signature:
+
+```gdscript
+connect(signal: StringName, callable: Callable, flags: int = 0) -> Error:
+    ...
+```
+
+Sample Call:
+```gdscript
+Events.connect("player_died", _on_player_died)
+```
+
+> With parameters:
+> ```gdscript
+> Events.connect("player_hit", _on_player_hit.bind(dmg: int, enemy: String))
+> ```
+
+___
+
+#### Emit a signal
+
+Signature:
+
+```gdscript
+func emit_signal(signal: StringName) -> Error:
+    ...
+```
+
+Sample Call:
+```gdscript
+emit_signal("player_died")
+```
+
+> With parameters:
+> ```gdscript
+> emit_signal("player_hit", 5, "skeleton")
+> ```
+
+
 </details>
 
 <details>
