@@ -3,6 +3,9 @@
 
 ![Static Badge](https://img.shields.io/badge/Godot-4.0+-478cbf?logo=godotengine&logoColor=ffffff&style=flat-square&labelColor=121821) 
 ![Static Badge](https://img.shields.io/badge/License-MIT-750014?style=flat-square&labelColor=121821)
+![Static Badge](https://img.shields.io/badge/Discord-121821?style=flat-square&logo=discord&labelColor=121821&color=121821&link=https%3A%2F%2Fdiscord.com%2Fchannels%2F1188049733562941440%2F1188174668469907467%2F1188187397687627876)
+
+
 
 
 ## Summary
