@@ -42,13 +42,10 @@
   > integrated with the settings system.
 </details>
 
-The intent of this template is unlike some of the other options that can be found on GitHub. Many
-of these templates serve the role of providing out-of-the-box, behind the scenes utilities that
-make development easier. This template is similar sans the 'behind the scenes'. The goal of this
-project is that you would not only have a solid basis for your project but that you would also
-have a clear understanding of, and ability to modify, its underlying systems. That being said, you
-will need to update these systems as your project progresses. This process should provide you a 
-greater ability to customize and make full use of these systems.
+This template provides all of the necessary systems to get started with a new game
+right away. Unlike some other options on GitHub though, these systems are
+designed to be extremely customizable and modular. Most, if not all, of them
+can be easily modified or completely removed.
 
 
 ## Getting Started
