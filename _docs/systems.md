@@ -224,10 +224,201 @@ these methods (the order needs to be mirrored for save and load).
 	> for saving and loading, you may have the game save from anywhere and load
 	> from anywhere. It is very important that the game is saved and loaded in
 	> the same order.
+
+![Example Saveable Class](https://github.com/LucksDev/godot_game_template/assets/121735106/c80c504c-98f5-499c-b206-513a7685d0c2)
+
+> Note that each class that you wish to save must have a `serialize()` and
+> `deserialize()` method that *mirror* each other.
+
 </details>
+
  
 <details>
 <summary><b>Usage</b>:</summary>
+
+#### Initialize SaveLoadGame
+
+Signature:
+```gdscript
+func initialize(f_path: String, f_password: String) -> void:
+    ...
+```
+
+Sample call:
+```gdscript
+SaveLoadGame.initialize("user://savegame.sav", "password")
+```
+
+> This initializes the class to use the "savegame.sav" file and
+> encrypt/decrypt using the password "password".
+
+___
+
+#### Reset SaveLoadGame
+
+Signature:
+```gdscript
+func clear() -> void:
+    ...
+```
+
+Sample call:
+```gdscript
+SaveLoadGame.clear()
+```
+
+> This call will reset SaveLoadGame by clearing `file_path`, `file`,
+> and `password`.
+
+___
+
+#### Open a file for saving or loading
+
+Signature:
+```gdscript
+func open_file(access: FileAccess.ModeFlags) -> int:
+    ...
+```
+
+Sample call:
+```gdscript
+SaveLoadGame.open_file(FileAccess.READ)
+```
+
+> This call will open the file that we initialized in `FileAccess.READ`
+> mode. This means that we can only read from the file (useful for loading).
+> Alternatively we can openit in `FileAccess.WRITE` mode which will allow
+> us to edit (useful for saving).
+
+___
+
+#### Close a file when done
+
+Signature:
+```gdscript
+func close_file() -> void:
+    ...
+```
+
+Sample call:
+```gdscript
+SaveLoadGame.close_file()
+```
+
+> Sets `file` equal to null resulting in Godot handling the file closure.
+
+___
+
+#### Save/Load a single object
+
+Signatures:
+```gdscript
+func serialize(object) -> void:   # Save an object
+    ...
+func deserialize(object) -> void: # Load an object
+    ...
+```
+
+Sample calls:
+```gdscript
+SaveLoadGame.serialize(GameData)   # Save GameData
+SaveLoadGame.deserialize(GameData) # Load GameData
+```
+
+> First calls GameData's save method, then its load method.
+
+> **Important**: The object you are saving must also have a serialize and
+> deserialize method which handles the saving and loading. *Not all objects
+> can be saved*. Only the ones for which you have defined a saving and
+> loading process.
+
+___
+
+#### Save/Load user preferences
+
+Signatures:
+```gdscript
+func save_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> void:
+    ...
+func load_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> void:
+    ...
+```
+
+Sample calls:
+```gdscript
+SaveLoadGame.save_user_prefs()
+SaveLoadGame.load_user_prefs()
+```
+
+> These methods will save and load predefined preferences to
+> "user://user_prefs.cfg" ny default.
+
+___
+
+#### Save/Load game
+
+Signatures:
+```gdscript
+func save_game() -> void:
+    ...
+func load_game() -> void:
+    ...
+```
+
+Sample calls:
+```gdscript
+SaveLoadGame.save_game()
+SaveLoadGame.load_game()
+```
+
+Sample Implementations:
+```gdscript
+func save_game() -> void:
+    open_file(FileAccess.WRITE)
+    serialize(GameData)
+    serialize(PlayerData)
+    close_file()
+
+func load_game() -> void:
+    open_file(FileAccess.READ)
+    deserialize(GameData)
+    deserialize(PlayerData)
+    close_file()
+```
+
+> Notice that these methods manually serialize/deserialize *all objects
+> that need to be saved*. And in *the same order*. This will need to be
+> updated in addition to individual `serialize()` and `deserialize()`
+> methods written on saveable classes.
+
+___
+
+#### How to set up a saveable class
+
+Signatures:
+```gdscript
+func serialize(file : FileAccess) -> void:
+    ...
+func deserialize(file : FileAccess) -> void:
+    ...
+```
+
+Sample processes:
+```gdscript
+func serialize(file : FileAccess) -> void:
+    file.store_32(spawn_location.x)
+    file.store_32(spawn_location.y)
+
+func deserialize(file : FileAccess) -> void:
+    spawn_location.x = file.get_32()
+    spawn_location.y = file.get_32()
+```
+
+> These methods must be present in every class that you wish to save.
+> To learn more about how to store different data types in files,
+> please reference Godot's documentation on
+> [FileAccess](https://docs.godotengine.org/en/stable/classes/class_fileaccess.html).
+
 </details>
 
 <details>
