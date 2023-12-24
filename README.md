@@ -3,7 +3,7 @@
 
 ![Static Badge](https://img.shields.io/badge/Godot-4.0+-478cbf?logo=godotengine&logoColor=ffffff&style=flat-square&labelColor=121821) 
 ![Static Badge](https://img.shields.io/badge/License-MIT-750014?style=flat-square&labelColor=121821)
-[![Static Badge](https://img.shields.io/badge/Discord-%20-121821?logo=discord&style=flat-square&labelColor=121821&color=7289da)](https://discord.com/channels/1188049733562941440/1188174668469907467/1188187397687627876)
+[![Static Badge](https://img.shields.io/badge/Discord-%20-121821?logo=discord&style=flat-square&labelColor=121821&color=7289da)](https://discord.gg/98SXCFJJ5k)
 
 
 
