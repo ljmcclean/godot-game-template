@@ -10,6 +10,18 @@ extends Node
 func set_volume(bus_index: int, volume: float) -> void:
 	AudioServer.set_bus_volume_db(bus_index, linear_to_db(volume))
 
+## Returns the linear volume of the given bus index.
+func get_volume(bus_index: int) -> float:
+	return linear_to_db(AudioServer.get_bus_volume_db(bus_index))
+
+## Mutes the specified bus index. 
+func mute_bus(bus_index: int) -> void:
+	AudioServer.set_bus_mute(bus_index, true)
+
+## Unmutes the specified bus index.
+func unmute_bus(bus_index: int) -> void:
+	AudioServer.set_bus_mute(bus_index, false)
+
 ## Fades bus volume from current to given volume, as a percentage,
 ## over duration.
 func fade_in(bus_index: int, volume: float, duration: float) -> void:

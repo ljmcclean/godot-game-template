@@ -40,6 +40,7 @@ func open_file(access: FileAccess.ModeFlags) -> int:
 	file = FileAccess.open_encrypted_with_pass(file_path, access, password)
 	return FileAccess.get_open_error() if (file == null) else OK
 
+
 ## Closes the file. Should be executed after the file is done being used.
 func close_file() -> void:
 	file = null
@@ -58,31 +59,56 @@ func deserialize(object) -> void:
 ## required. This save is not encrypted and is saved as a .cfg file.
 func save_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> void:
 	var config := ConfigFile.new()
-	
-	config.save(file_path)
+	var section: String = prefs_path.get_file()
+	#region Audio Settings
+	config.set_value(section, "master_volume", Audio.get_volume(0))
+	config.set_value(section, "music_volume", Audio.get_volume(1))
+	config.set_value(section, "sfx_volume", Audio.get_volume(2))
+	config.set_value(section, "ambient_volume", Audio.get_volume(3))
+	config.set_value(section, "master_volume", Audio.get_volume(0))
+	#endregion
+	config.set_value(section, "jump", 0)
+	config.save(prefs_path)
 
 #TODO Finish user_prefs
 ## Method for loading the user's preferences. The [param prefs_path] must match
 ## the file path that was used for [method save_user_prefs] or the load
 ## will fail.
-func load_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> void:
+func load_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> Error:
 	var config := ConfigFile.new()
-	var err: Error = config.load(file_path)
+	var err: Error = config.load(prefs_path)
 	if err != OK:
-		return
+		return err
+	
+	return OK
 
-## Formatted structure for saving the entire game.
-## Structure must mirror [code]load_game()[/code].
-func save_game() -> void:
-	open_file(FileAccess.WRITE)
+## Formatted structure for saving the entire game.Serializes all objects that
+## need to be saved; [b]this must be updated as you add objects that need to be
+## saved to your game[/b]. Returns `false` if the game fails to save. Also saves
+## user's settings via [method save_user_settings]. Structure must mirror 
+## [method load_game]. A return value not equal to zero indicates that the save
+## has failed.
+func save_game() -> int:
+	save_user_prefs()
+	if open_file(FileAccess.WRITE) != OK:
+		return 2
 	serialize(GameData)
 	serialize(PlayerData)
 	close_file()
+	return 0
 
-## Formatted structure for loading the entire game.
-## Structure must mirror [code]save_game()[/code].
-func load_game() -> void:
-	open_file(FileAccess.READ)
+## Formatted structure for loading the entire game. Deserializes all objects 
+## that need to be loaded; [b]this must be updated as you add objects that need 
+## to be loaded[/b]. Returns `false` if the game fails to save. Also loadss
+## user's settings via [method load_user_settings]. Structure must mirror 
+## [method load_game]. A return value not equal to zero indicates that the load
+## has failed.
+func load_game() -> int:
+	if load_user_prefs() != OK:
+		return 1
+	if open_file(FileAccess.READ) != OK:
+		return 2
 	deserialize(GameData)
 	deserialize(PlayerData)
 	close_file()
+	return 0
