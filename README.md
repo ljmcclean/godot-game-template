@@ -144,5 +144,9 @@ Thank you to...
 
 - Godot's amazing [community](https://www.bing.com/ck/a?!&&p=f5a756818708d6cfJmltdHM9MTcwMzIwMzIwMCZpZ3VpZD0xMzMyNDg1ZS04NGJkLTY0MTktMmYxZi01YmNlODVjYTY1MzcmaW5zaWQ9NTE5Ng&ptn=3&ver=2&hsh=3&fclid=1332485e-84bd-6419-2f1f-5bce85ca6537&psq=official+godot+discord&u=a1aHR0cHM6Ly9kaXNjb3JkLmNvbS9pbnZpdGUvekg3TlVneg&ntb=1 "Godot's official Discord server")
 
+
+## Discord Community
+If you're interested in joining a Discord community – to give feedback or help on development of this project
+or to learn from and share with other devs – check out [Developer Nexus | Godot](https://discord.gg/98SXCFJJ5k).
 <br></br>
 <sup>If you appreciate the project, give it a star!</sup>
