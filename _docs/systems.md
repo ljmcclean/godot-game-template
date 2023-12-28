@@ -28,7 +28,7 @@ information can be found in Godot's in-editor class reference (see below).
 
 ### Audio Manager
 
-> AudioManager
+> Audio
 
 <details>
 <summary><b>Overview</b>:</summary>
@@ -61,7 +61,7 @@ func set_volume(bus_index: int, volume: float) -> void:
 
 Sample call:
 ```gdscript
-AudioManager.set_volume(2, .5)
+Audio.set_volume(2, .5)
 ```
 
 > This call would set the volume for bus two to half.
@@ -78,7 +78,7 @@ func fade_in(bus_index: int, volume: float, duration: float) -> void:
 
 Sample call:
 ```gdscript
-AudioManager.fade_in(1, .2, 1.3)
+Audio.fade_in(1, .2, 1.3)
 ```
 
 > This call would fade bus one's volume to twenty percent over
@@ -96,7 +96,7 @@ func fade_out(bus_index: int, duration: float) -> void:
 
 Sample call:
 ```gdscript
-AudioManager.fade_out(3, .4)
+Audio.fade_out(3, .4)
 ```
 
 > This call would fade bus three's volume to zero over the
@@ -205,7 +205,7 @@ ___
 
 ### Save & Load Game
 
-> SaveLoadGame
+> SaveLoad
 
 <details>
 <summary><b>Overview</b>:</summary>
@@ -216,7 +216,7 @@ method.
 	- Samples of these method implementations can be found in the GameData and
 	PlayerData autoloads.
 
-- The SaveLoadGame autoload has the methods `save_game()` and `load_game()`;
+- The SaveLoad autoload has the methods `save_game()` and `load_game()`;
 all objects you wish to save and load must have their methods called in
 these methods (the order needs to be mirrored for save and load).
 
@@ -236,7 +236,7 @@ these methods (the order needs to be mirrored for save and load).
 <details>
 <summary><b>Usage</b>:</summary>
 
-#### Initialize SaveLoadGame
+#### Initialize SaveLoad
 
 Signature:
 ```gdscript
@@ -246,7 +246,7 @@ func initialize(f_path: String, f_password: String) -> void:
 
 Sample call:
 ```gdscript
-SaveLoadGame.initialize("user://savegame.sav", "password")
+SaveLoad.initialize("user://savegame.sav", "password")
 ```
 
 > This initializes the class to use the "savegame.sav" file and
@@ -254,7 +254,7 @@ SaveLoadGame.initialize("user://savegame.sav", "password")
 
 ___
 
-#### Reset SaveLoadGame
+#### Reset SaveLoad
 
 Signature:
 ```gdscript
@@ -264,10 +264,10 @@ func clear() -> void:
 
 Sample call:
 ```gdscript
-SaveLoadGame.clear()
+SaveLoad.clear()
 ```
 
-> This call will reset SaveLoadGame by clearing `file_path`, `file`,
+> This call will reset SaveLoad by clearing `file_path`, `file`,
 > and `password`.
 
 ___
@@ -282,7 +282,7 @@ func open_file(access: FileAccess.ModeFlags) -> int:
 
 Sample call:
 ```gdscript
-SaveLoadGame.open_file(FileAccess.READ)
+SaveLoad.open_file(FileAccess.READ)
 ```
 
 > This call will open the file that we initialized in `FileAccess.READ`
@@ -302,7 +302,7 @@ func close_file() -> void:
 
 Sample call:
 ```gdscript
-SaveLoadGame.close_file()
+SaveLoad.close_file()
 ```
 
 > Sets `file` equal to null resulting in Godot handling the file closure.
@@ -321,8 +321,8 @@ func deserialize(object) -> void: # Load an object
 
 Sample calls:
 ```gdscript
-SaveLoadGame.serialize(GameData)   # Save GameData
-SaveLoadGame.deserialize(GameData) # Load GameData
+SaveLoad.serialize(GameData)   # Save GameData
+SaveLoad.deserialize(GameData) # Load GameData
 ```
 
 > First calls GameData's save method, then its load method.
@@ -346,8 +346,8 @@ func load_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> void:
 
 Sample calls:
 ```gdscript
-SaveLoadGame.save_user_prefs()
-SaveLoadGame.load_user_prefs()
+SaveLoad.save_user_prefs()
+SaveLoad.load_user_prefs()
 ```
 
 > These methods will save and load predefined preferences to
@@ -367,8 +367,8 @@ func load_game() -> void:
 
 Sample calls:
 ```gdscript
-SaveLoadGame.save_game()
-SaveLoadGame.load_game()
+SaveLoad.save_game()
+SaveLoad.load_game()
 ```
 
 Sample Implementations:
@@ -438,7 +438,7 @@ ___
 
 ### Scene Manager
 
-> SceneManager
+> Scenes
 
 <details>
 <summary><b>Overview</b>:</summary>
