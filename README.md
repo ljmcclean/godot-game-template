@@ -96,14 +96,14 @@ and for notes on the project structure you can reference the
 
 **Autoload Roles**:
 
-- SceneManager
+- Scene Manager
   
   > [Scene Manager Documentation](_docs/systems.md#scene-manager)
   
   - The scene manager is used for handling scene changes and transitions. It comes with several
     methods for handling loading screens, additive loads, etc.
     
-- AudioManager
+- Audio Manager
 
   > [Audio Manager Documentation](_docs/systems.md#audio-manager)
   
@@ -116,7 +116,7 @@ and for notes on the project structure you can reference the
 
   - The events singleton provides a single point for global signal handling.
 
-- SaveLoadGame
+- Save & Load Game
 
   > [Save & Load Game Documentation](_docs/systems.md#save--load-game)
 
