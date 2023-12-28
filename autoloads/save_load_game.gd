@@ -65,9 +65,7 @@ func save_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> void:
 	config.set_value(section, "music_volume", Audio.get_volume(1))
 	config.set_value(section, "sfx_volume", Audio.get_volume(2))
 	config.set_value(section, "ambient_volume", Audio.get_volume(3))
-	config.set_value(section, "master_volume", Audio.get_volume(0))
 	#endregion
-	config.set_value(section, "jump", 0)
 	config.save(prefs_path)
 
 #TODO Finish user_prefs
@@ -76,10 +74,16 @@ func save_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> void:
 ## will fail.
 func load_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> Error:
 	var config := ConfigFile.new()
+	var section: String = prefs_path.get_file()
 	var err: Error = config.load(prefs_path)
 	if err != OK:
 		return err
-	
+	#region Audio Settings
+	Audio.set_volume(0, config.get_value(section, "master_volume"))
+	Audio.set_volume(1, config.get_value(section, "music_volume"))
+	Audio.set_volume(2, config.get_value(section, "sfx_volume"))
+	Audio.set_volume(3, config.get_value(section, "ambient_volume"))
+	#endregion
 	return OK
 
 ## Formatted structure for saving the entire game.Serializes all objects that

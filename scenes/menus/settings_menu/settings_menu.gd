@@ -6,13 +6,13 @@ extends Control
 
 
 func _ready() -> void:
-	SceneManager.pause_game()
+	Scenes.pause_game()
 	#prepare_audio()
 
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-		SceneManager.resume_game()
+		Scenes.resume_game()
 		queue_free.call_deferred()
 
 

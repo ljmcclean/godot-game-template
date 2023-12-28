@@ -19,7 +19,7 @@ var progress: Array[float]
 
 
 func _ready() -> void:
-	target_scene_path = SceneManager.load_scene_path
+	target_scene_path = Scenes.load_scene_path
 	ResourceLoader.load_threaded_request(target_scene_path)
 
 
