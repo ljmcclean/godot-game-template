@@ -35,6 +35,7 @@ SaveLoad="*res://autoloads/save_load_game.gd"
 Scenes="*res://autoloads/scene_manager/scene_manager.tscn"
 Audio="*res://autoloads/audio_manager.gd"
 Events="*res://autoloads/events.gd"
+UserData="*res://autoloads/data/user_data.gd"
 GameData="*res://autoloads/data/game_data.gd"
 PlayerData="*res://autoloads/data/player_data.gd"
 

@@ -71,7 +71,8 @@ func save_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> void:
 #TODO Finish user_prefs
 ## Method for loading the user's preferences. The [param prefs_path] must match
 ## the file path that was used for [method save_user_prefs] or the load
-## will fail.
+## will fail. Loads user preferences into 'UserData' autoload for manipulation
+## at runtime without modifying save file.
 func load_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> Error:
 	var config := ConfigFile.new()
 	var section: String = prefs_path.get_file()
@@ -79,10 +80,14 @@ func load_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> Error:
 	if err != OK:
 		return err
 	#region Audio Settings
-	Audio.set_volume(0, config.get_value(section, "master_volume"))
-	Audio.set_volume(1, config.get_value(section, "music_volume"))
-	Audio.set_volume(2, config.get_value(section, "sfx_volume"))
-	Audio.set_volume(3, config.get_value(section, "ambient_volume"))
+	UserData.master_volume = config.get_value(section, "master_volume")
+	Audio.set_volume(0, UserData.master_volume)
+	UserData.music_volume = config.get_value(section, "music_volume")
+	Audio.set_volume(1, UserData.music_volume)
+	UserData.sfx_volume = config.get_value(section, "sfx_volume")
+	Audio.set_volume(2, UserData.sfx_volume)
+	UserData.ambient_volume = config.get_value(section, "ambient_volume")
+	Audio.set_volume(3, UserData.ambient_volume)
 	#endregion
 	return OK
 
