@@ -5,12 +5,24 @@ talk with other project contributors, please contact me on Discord and I will
 add you to a private channel with other contributors and I.
 
 
+### ==Guidelines for Proposed Contributions==
+___
+- Changes/Additions should contribute to the projects goal of being **accessible**, **modular**,
+and **well-documented**.
+- The functionality of the change is important but it is more important that a user
+can **learn from**, **understand**, and **customize** all additions to the project.
+- Make sure the contribution follows
+[best practices](https://github.com/LucksDev/godot_game_template/blob/main/_docs/best_practices.md)
+for this project. That means that it should adhere to the **file structure**, use **static typing**, and
+**explicit return types**.
+
 ### Contact Me
 
 ___
 - This step is not necessary, but if you would like to make sure that your
 proposed changes fall under the goals of this project, you may contact me
 on Discord (see last section of [README](https://github.com/LucksDev/godot_game_template/blob/main/README.md)).
+
 
 ### Prepare Local Repo
 
