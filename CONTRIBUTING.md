@@ -16,13 +16,6 @@ can **learn from**, **understand**, and **customize** all additions to the proje
 for this project. That means that it should adhere to the **file structure**, use **static typing**, and
 **explicit return types**.
 
-### Contact Me
-
-___
-- This step is not necessary, but if you would like to make sure that your
-proposed changes fall under the goals of this project, you may contact me
-on Discord (see last section of [README](https://github.com/LucksDev/godot_game_template/blob/main/README.md)).
-
 
 ### Prepare Local Repo
 
