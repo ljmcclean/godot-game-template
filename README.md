@@ -74,7 +74,7 @@ There are two options to get started:
 Now that you have the project on your device you will need to do a few things before you can
 get going.
 
-- Set the projects Default Bus Layout to "res://common/resources/default_bus_layout.tres"
+- Set the projects Default Bus Layout to "res://common/audio/default_bus_layout.tres"
 
   > This settings can be found via the Project tab > Project settings... > General > Audio >
   > Buses > Default Bus Layout
