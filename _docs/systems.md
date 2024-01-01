@@ -13,13 +13,15 @@ information can be found in Godot's in-editor class reference (see below).
 > <details>
 > <summary><b>Current Documentation</b>:</summary>
 > 
-> - DocsSceneManager
+> - DocsScenes
 > 
-> - DocsSaveLoadGame
+> - DocsSaveLoad
 > 
 > - DocsEvents
 > 
-> - DocsAudioManager
+> - DocsAudio
+>
+> - DocsUserPrefs
 > 
 > - LoadingScreen
 > </details>
@@ -334,27 +336,6 @@ SaveLoad.deserialize(GameData) # Load GameData
 
 ___
 
-#### Save/Load user preferences
-
-Signatures:
-```gdscript
-func save_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> void:
-    ...
-func load_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> void:
-    ...
-```
-
-Sample calls:
-```gdscript
-SaveLoad.save_user_prefs()
-SaveLoad.load_user_prefs()
-```
-
-> These methods will save and load predefined preferences to
-> "user://user_prefs.cfg" ny default.
-
-___
-
 #### Save/Load game
 
 Signatures:
@@ -476,4 +457,52 @@ sure all calls to its methods are removed.
 
 	> *Note:* This makes the "loading_screen" scene obsolete, so it can be removed
 	>  as well.
+</details>
+
+___
+
+### User Preferences
+
+> UserPrefs
+
+<details>
+<summary><b>Overview</b>:</summary>
+</details>
+
+<details>
+<summary><b>Usage</b>:</summary>
+
+ #### Save/Load user preferences
+
+Signatures:
+```gdscript
+func save_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> void:
+    ...
+func load_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> void:
+    ...
+```
+
+Sample calls:
+```gdscript
+SaveLoad.save_user_prefs()
+SaveLoad.load_user_prefs()
+```
+
+> These methods will save and load predefined preferences to
+> "user://user_prefs.cfg" ny default.
+
+</details>
+
+<details>
+<summary><b>Removal</b>:</summary>
+
+- This system can be removed. Delete the *user_prefs* folder in *"res://autoloads"*
+  and remove all calls.
+
+	- These calls can be found in the "main_menu" scene and the "settings_menu"
+	scene.<br><br>
+
+	> *Note:* This makes the "user_data" resource and script obsolete, so they
+ 	> can be removed as well. They can be found at *"res://common/resources/
+ 	> user_data"*.
 </details>
