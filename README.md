@@ -30,6 +30,11 @@
   > and a custom save structure. This system is highly customizable for more
   > complex projects. Also contains methods for saving and loading user
   > preferences (controls, volume, etc.).
+
+- User Preferences
+
+  > Save and load system specifically for user preferences. Completely modular for
+  > custom game settings.
   
 - Scene Manager
   
@@ -116,9 +121,9 @@ and for notes on the project structure you can reference the
 
   - The events singleton provides a single point for global signal handling.
 
-- Save & Load Game
+- Save & Load
 
-  > [Save & Load Game Documentation](_docs/systems.md#save--load-game)
+  > [Save & Load Documentation](_docs/systems.md#save--load-game)
 
   - This class is used for saving and loading the game with encrypted binary serialization. This means
     that this class is likely the most flexible but also one of the most complex of all of the autoloads.
