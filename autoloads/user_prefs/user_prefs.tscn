@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpfyfokh2jgyn"]
+
+[ext_resource type="Script" path="res://autoloads/user_prefs/user_prefs.gd" id="1_8hc06"]
+[ext_resource type="Resource" uid="uid://c70ja7y2hmsct" path="res://common/resources/user_data/user_data.tres" id="2_cbpt5"]
+
+[node name="UserPrefs" type="Node"]
+script = ExtResource("1_8hc06")
+user_data = ExtResource("2_cbpt5")

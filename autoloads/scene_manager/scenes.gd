@@ -1,4 +1,4 @@
-class_name DocsSceneManager
+class_name DocsScenes
 extends Node
 ## Used for managing, loading, removing, and switching scenes.
 ##

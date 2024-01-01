@@ -1,4 +1,4 @@
-class_name DocsAudioManager
+class_name DocsAudio
 extends Node
 ## Provides functions for managing game audio.
 ##

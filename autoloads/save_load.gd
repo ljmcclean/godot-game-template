@@ -1,4 +1,4 @@
-class_name DocsSaveLoadGame
+class_name DocsSaveLoad
 extends Node
 ## Used for saving and loading the game in an encrypted binary format.
 ##
@@ -53,44 +53,6 @@ func serialize(object) -> void:
 func deserialize(object) -> void:
 	object.deserialize(file)
 
-#TODO Finish user_prefs
-## Method for saving the user's preferences. A custom file path can be used
-## instead of [param prefs_path]'s default value if multiple saves are
-## required. This save is not encrypted and is saved as a .cfg file.
-func save_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> void:
-	var config := ConfigFile.new()
-	var section: String = prefs_path.get_file()
-	#region Audio Settings
-	config.set_value(section, "master_volume", Audio.get_volume(0))
-	config.set_value(section, "music_volume", Audio.get_volume(1))
-	config.set_value(section, "sfx_volume", Audio.get_volume(2))
-	config.set_value(section, "ambient_volume", Audio.get_volume(3))
-	#endregion
-	config.save(prefs_path)
-
-#TODO Finish user_prefs
-## Method for loading the user's preferences. The [param prefs_path] must match
-## the file path that was used for [method save_user_prefs] or the load
-## will fail. Loads user preferences into 'UserData' autoload for manipulation
-## at runtime without modifying save file.
-func load_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> Error:
-	var config := ConfigFile.new()
-	var section: String = prefs_path.get_file()
-	var err: Error = config.load(prefs_path)
-	if err != OK:
-		return err
-	#region Audio Settings
-	UserData.master_volume = config.get_value(section, "master_volume")
-	Audio.set_volume(0, UserData.master_volume)
-	UserData.music_volume = config.get_value(section, "music_volume")
-	Audio.set_volume(1, UserData.music_volume)
-	UserData.sfx_volume = config.get_value(section, "sfx_volume")
-	Audio.set_volume(2, UserData.sfx_volume)
-	UserData.ambient_volume = config.get_value(section, "ambient_volume")
-	Audio.set_volume(3, UserData.ambient_volume)
-	#endregion
-	return OK
-
 ## Formatted structure for saving the entire game.Serializes all objects that
 ## need to be saved; [b]this must be updated as you add objects that need to be
 ## saved to your game[/b]. Returns `false` if the game fails to save. Also saves
@@ -98,9 +60,8 @@ func load_user_prefs(prefs_path: String = "user://user_prefs.cfg") -> Error:
 ## [method load_game]. A return value not equal to zero indicates that the save
 ## has failed.
 func save_game() -> int:
-	save_user_prefs()
 	if open_file(FileAccess.WRITE) != OK:
-		return 2
+		return 1
 	serialize(GameData)
 	serialize(PlayerData)
 	close_file()
@@ -113,10 +74,8 @@ func save_game() -> int:
 ## [method load_game]. A return value not equal to zero indicates that the load
 ## has failed.
 func load_game() -> int:
-	if load_user_prefs() != OK:
-		return 1
 	if open_file(FileAccess.READ) != OK:
-		return 2
+		return 1
 	deserialize(GameData)
 	deserialize(PlayerData)
 	close_file()

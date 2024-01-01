@@ -31,11 +31,11 @@ buses/default_bus_layout="res://common/audio/default_bus_layout.tres"
 
 [autoload]
 
-SaveLoad="*res://autoloads/save_load_game.gd"
-Scenes="*res://autoloads/scene_manager/scene_manager.tscn"
-Audio="*res://autoloads/audio_manager.gd"
+SaveLoad="*res://autoloads/save_load.gd"
+Scenes="*res://autoloads/scene_manager/scenes.tscn"
+Audio="*res://autoloads/audio.gd"
 Events="*res://autoloads/events.gd"
-UserData="*res://autoloads/data/user_data.gd"
+UserPrefs="*res://autoloads/user_prefs/user_prefs.tscn"
 GameData="*res://autoloads/data/game_data.gd"
 PlayerData="*res://autoloads/data/player_data.gd"
 
